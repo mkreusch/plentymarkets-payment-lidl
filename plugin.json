@@ -1,0 +1,23 @@
+{
+    "version"           : "1.0.0",
+    "name"              : "PaymentLidl",
+    "marketplaceName"   : {"de":"Lidl","en":"Lidl"},
+    "license"           : "MIT",
+    "pluginIcon"        : "icon_plugin_xs.png",
+    "price"             : 0.00,
+    "description"       : "Lidl Payment dummy plugin for plentymarkets online stores",
+    "shortDescription"  : {"de": "Lidl Payment","en": "Lidl Payment"},
+    "categories"        : ["3519"],
+    "author"            : "Marcus Kreusch",
+    "authorIcon"        : "icon_author_xs.png",
+    "email"             : "info@kreusch-creative.de",
+    "phone"             : "",
+    "keywords"          : [],
+    "type"              : "payment",
+    "namespace"         : "LidlPayment",
+    "serviceProvider"   : "LidlPayment\\Providers\\LidlPaymentServiceProvider",
+    "javaScriptFiles"   : [],
+    "containers"        : [],
+    "dataProviders"     : [],
+    "dependencies"      : []
+}

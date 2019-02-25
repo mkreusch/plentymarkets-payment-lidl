@@ -1,6 +1,6 @@
 {
     "version"           : "1.0.0",
-    "name"              : "PaymentLidl",
+    "name"              : "LidlPayment",
     "marketplaceName"   : {"de":"Lidl","en":"Lidl"},
     "license"           : "MIT",
     "pluginIcon"        : "icon_plugin_xs.png",

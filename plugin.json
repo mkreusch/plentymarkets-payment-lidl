@@ -1,5 +1,5 @@
 {
-    "version"           : "1.0.0",
+    "version"           : "1.0.1",
     "name"              : "LidlPayment",
     "marketplaceName"   : {"de":"Lidl","en":"Lidl"},
     "license"           : "MIT",

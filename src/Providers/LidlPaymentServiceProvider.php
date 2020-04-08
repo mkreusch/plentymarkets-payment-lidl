@@ -2,10 +2,10 @@
 
 namespace LidlPayment\Providers;
 
-use LidlPayment\Services\LidlPaymentMethodService;
+use LidlPayment\Services\PaymentMethodService;
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodContainer;
-use LidlPayment\Helper\LidlPaymentHelper;
+use LidlPayment\Helper\PaymentHelper;
 
 /**
  * Class LidlPaymentServiceProvider
@@ -21,14 +21,14 @@ class LidlPaymentServiceProvider extends ServiceProvider
     /**
      * Boot additional services for the payment method
      *
-     * @param LidlPaymentHelper $paymentHelper
+     * @param PaymentHelper $paymentHelper
      * @param PaymentMethodContainer $payContainer
      */
     public function boot(
-        LidlPaymentHelper $paymentHelper,
+        PaymentHelper $paymentHelper,
         PaymentMethodContainer $payContainer
     ) {
         $paymentHelper->createMopIfNotExists();
-        $payContainer->register(LidlPaymentMethodService::PLUGIN_KEY . '::' . LidlPaymentMethodService::PAYMENT_KEY, LidlPaymentMethodService::class, []);
+        $payContainer->register(PaymentMethodService::PLUGIN_KEY . '::' . PaymentMethodService::PAYMENT_KEY, PaymentMethodService::class, []);
     }
 }

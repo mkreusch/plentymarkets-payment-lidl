@@ -10,12 +10,12 @@ class LidlPaymentMethodService extends PaymentMethodService
     const PAYMENT_KEY = 'LidlPayment';
     const PAYMENT_NAME = 'Lidl';
 
-    public function isBackendSearchable()
+    public function isBackendSearchable():bool
     {
         return true;
     }
 
-    public function isBackendActive()
+    public function isBackendActive():bool
     {
         return true;
     }
@@ -25,12 +25,12 @@ class LidlPaymentMethodService extends PaymentMethodService
         return true;
     }
 
-    public function getBackendName(string $lang)
+    public function getBackendName(string $lang):string
     {
         return self::PAYMENT_NAME;
     }
 
-    public function canHandleSubscriptions()
+    public function canHandleSubscriptions():bool
     {
         return true;
     }

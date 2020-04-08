@@ -2,7 +2,7 @@
 
 namespace LidlPayment\Helper;
 
-use LidlPayment\Services\LidlPaymentMethodService;
+use LidlPayment\Services\PaymentMethodService;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodRepositoryContract;
 
 /**
@@ -35,8 +35,8 @@ class LidlPaymentHelper
 
         if ($this->getPaymentMethod() == 'no_paymentmethod_found') {
             $paymentMethodData = [
-                'pluginKey'  => LidlPaymentMethodService::PLUGIN_KEY,
-                'paymentKey' => LidlPaymentMethodService::PAYMENT_KEY,
+                'pluginKey'  => PaymentMethodService::PLUGIN_KEY,
+                'paymentKey' => PaymentMethodService::PAYMENT_KEY,
                 'name'       => 'Lidl'
             ];
             $this->paymentMethodRepository->createPaymentMethod($paymentMethodData);
@@ -51,11 +51,11 @@ class LidlPaymentHelper
      */
     public function getPaymentMethod()
     {
-        $paymentMethods = $this->paymentMethodRepository->allForPlugin(LidlPaymentMethodService::PLUGIN_KEY);
+        $paymentMethods = $this->paymentMethodRepository->allForPlugin(PaymentMethodService::PLUGIN_KEY);
 
         if (!is_null($paymentMethods)) {
             foreach ($paymentMethods as $paymentMethod) {
-                if ($paymentMethod->paymentKey == LidlPaymentMethodService::PAYMENT_KEY) {
+                if ($paymentMethod->paymentKey == PaymentMethodService::PAYMENT_KEY) {
                     return $paymentMethod->id;
                 }
             }

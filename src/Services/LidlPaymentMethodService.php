@@ -18,4 +18,8 @@ class LidlPaymentMethodService extends PaymentMethodService
     {
         return true;
     }
+
+    public function isActive(){
+        return true;
+    }
 }
